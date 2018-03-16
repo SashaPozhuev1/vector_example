@@ -51,7 +51,7 @@ vector_t & vector_t::operator =(vector_t const & other)
 bool vector_t::operator ==(vector_t const & other) const
 {
 	//
-	if ( elements_ = other.elements_ ) {
+	if ( elements_ == other.elements_ ) {
 		return true;
 	}
 	else if ( size_ != other.size_ || capacity_ != other.capacity_ ) {
