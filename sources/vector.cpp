@@ -118,6 +118,7 @@ void vector_t::pop_back()
 {
 	//
 	if (size_ - 1 == 0) {
+		size_ = 0;
 		capacity_ = 1;	
 	}
 	else if ( size_ - 1 > capacity_ / 4 ) {
