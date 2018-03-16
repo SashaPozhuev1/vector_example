@@ -78,7 +78,7 @@ void vector_t::push_back(int value)
 	//
 	if (capacity_ == 0) {
 		int newsize_ = size_ + 1;
-		int newcapacity_ = capacity + 1;
+		int newcapacity_ = capacity_ + 1;
 		int * newelements_ = new int [newcapacity_];
 		
 		for ( std::size_t i = 0; i < size_; ++i ) {
@@ -94,7 +94,7 @@ void vector_t::push_back(int value)
 	else if (size_ + 1 > capacity_) {
 	
 		int newsize_ = size_ + 1;
-		int newcapacity_ = capacity * 2;
+		int newcapacity_ = capacity_ * 2;
 		int * newelements_ = new int [newcapacity_];
 		
 		for ( std::size_t i = 0; i < size_; ++i ) {
