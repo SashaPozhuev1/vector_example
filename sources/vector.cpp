@@ -118,14 +118,14 @@ void vector_t::pop_back()
 {
 	//
 	if (size_ - 1 == 0) {
-		capacity = 1;	
+		capacity_ = 1;	
 	}
 	else if ( size_ - 1 > capacity_ / 4 ) {
 		size_--;
 	}
 	else {
 		int newsize_ = size_ - 1;
-		int newcapacity_ = capacity / 2;
+		int newcapacity_ = capacity_ / 2;
 		int * newelements_ = new int [newcapacity_];	
 		
 		for ( std::size_t i = 0; i < newsize_; ++i ) {
