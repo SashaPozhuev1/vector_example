@@ -27,7 +27,16 @@ public:
 };
 
 template <typename T>
-bool operator !=(vector_t<T> const & lhs, vector_t<T> const & rhs);
+bool operator !=(vector_t<T> const & lhs, vector_t<T> const & rhs)
+{
+	if ( lhs == rhs ) {
+		return false;	
+	}
+	else {
+		return true;
+	}
+}
+
 
 template <typename T>
 vector_t<T>::vector_t()
@@ -195,15 +204,4 @@ T & vector_t<T>::at (std::size_t index) const
 		throw std::out_of_range( "Error overflow" );
 	}
 	return elements_[index];
-}
-
-template <typename T>
-bool vector_t<T>::operator !=(vector_t<T> const & lhs, vector_t<T> const & rhs)
-{
-	if ( lhs == rhs ) {
-		return false;	
-	}
-	else {
-		return true;
-	}
 }
