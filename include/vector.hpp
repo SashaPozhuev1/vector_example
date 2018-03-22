@@ -188,18 +188,13 @@ void vector_t<T>::pop_back()
 template <typename T>
 T & vector_t<T>::operator [](std::size_t index)
 {
-	try {
-		this->at ( index ); 	
-	}
+
 	return elements_[index];
 }
 
 template <typename T>
 T vector_t<T>::operator [](std::size_t index) const
 {
-	try {
-		this->at ( index ); 	
-	}
 	return elements_[index];
 }
 
