@@ -23,12 +23,6 @@ vector_t::vector_t(vector_t const & other)
 
 vector_t & vector_t::operator =(vector_t const & other)
 {
-/*	if (size_ == other.size_ &&
-	    capacity_ == other.capacity_ &&
-	    elements_ == other.elements_) {
-		
-	}
-	else*/ 
 	if ( this != &other ) {
 		delete[] elements_;
 	
@@ -154,6 +148,12 @@ int & vector_t::operator [](std::size_t index)
 
 int vector_t::operator [](std::size_t index) const
 {
+	return elements_[index];
+}
+
+int & at (std::size_t index)
+{
+	if ( index < 0 || index >= size_ ) throw std::out_of_range( "Error overflow" ); 
 	return elements_[index];
 }
 
