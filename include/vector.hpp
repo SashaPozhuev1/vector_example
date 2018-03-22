@@ -113,12 +113,12 @@ std::size_t vector_t<T>::capacity() const
 }
 
 template <typename T>
-void vector_t<T>::push_back(int value)
+void vector_t<T>::push_back(T value)
 {
 	if (capacity_ == 0) {
 		int newsize_ = size_ + 1;
 		int newcapacity_ = capacity_ + 1;
-		int * newelements_ = new T [newcapacity_];
+		T * newelements_ = new T [newcapacity_];
 		
 		for ( std::size_t i = 0; i < size_; ++i ) {
 			newelements_[ i ] = elements_[ i ];
@@ -134,7 +134,7 @@ void vector_t<T>::push_back(int value)
 	
 		int newsize_ = size_ + 1;
 		int newcapacity_ = capacity_ * 2;
-		int * newelements_ = new T [newcapacity_];
+		T * newelements_ = new T [newcapacity_];
 		
 		for ( std::size_t i = 0; i < size_; ++i ) {
 			newelements_[ i ] = elements_[ i ];
@@ -161,7 +161,7 @@ void vector_t<T>::pop_back()
 	else if (size_ - 1 == 0) {
 		int newsize_ = size_ - 1;
 		int newcapacity_ = 1;
-		int * newelements_ = new T [newcapacity_];	
+		T * newelements_ = new T [newcapacity_];	
 		delete[] elements_;
 		size_ = newsize_;
 		capacity_ = newcapacity_;
@@ -173,7 +173,7 @@ void vector_t<T>::pop_back()
 	else {
 		int newsize_ = size_ - 1;
 		int newcapacity_ = capacity_ / 2;
-		int * newelements_ = new T [newcapacity_];	
+		T * newelements_ = new T [newcapacity_];	
 		
 		for ( std::size_t i = 0; i < newsize_; ++i ) {
 			newelements_[ i ] = elements_[ i ];
