@@ -126,5 +126,5 @@ TEST_CASE("at elements")
 	vector.push_back(2.5);
 	vector.push_back(3.7);
 	
-	REQUIRE_THROWS_AS( vector[ 3 ], std::out_of_range);
+	REQUIRE_THROWS_AS( vector.at(3), std::out_of_range);
 }
