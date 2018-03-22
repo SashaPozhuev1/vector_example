@@ -201,7 +201,7 @@ template <typename T>
 T & vector_t<T>::at (std::size_t index) const
 {
 	if ( index < 0 || index >= size_ ) {
-		throw std::out_of_range( "Error overflow" );
+		throw std::out_of_range( "Error range" );
 	}
 	return elements_[index];
 }
