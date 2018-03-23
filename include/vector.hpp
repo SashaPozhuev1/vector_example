@@ -21,7 +21,7 @@ public:
 
 	T & operator [](std::size_t index);
 	T operator [](std::size_t index) const;
-	T & at (std::size_t index) const;
+	T & at (std::size_t index);
 
 	bool operator ==(vector_t<T> const & other) const;
 };
@@ -201,7 +201,7 @@ T vector_t<T>::operator [](std::size_t index) const
 template <typename T>
 T & vector_t<T>::at (std::size_t index) const
 {
-	if ( index < 0 || index >= size_ ) {
+	if ( index >= size_ ) {
 		throw std::out_of_range( "Error range" );
 	}
 	return elements_[index];
