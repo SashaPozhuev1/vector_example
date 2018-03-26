@@ -199,7 +199,7 @@ T vector_t<T>::operator [](std::size_t index) const
 }
 
 template <typename T>
-T & vector_t<T>::at (std::size_t index) const
+T & vector_t<T>::at (std::size_t index)
 {
 	if ( index >= size_ ) {
 		throw std::out_of_range( "Error range" );
